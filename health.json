@@ -27,8 +27,7 @@
             { "health17": "query.health == 17" },
             { "health18": "query.health == 18" },
             { "health19": "query.health == 19" },
-            { "health20": "query.health == 20" }
-            //add more transitions as needed
+            { "health20": "query.health == 20" }//add more transitions as needed
           ]
         },
         "health1": { "on_entry": [ "/scoreboard players set @s health 1" ], "transitions": [ { "default": "1.0" } ] },
@@ -50,8 +49,7 @@
         "health17": { "on_entry": [ "/scoreboard players set @s health 17" ], "transitions": [ { "default": "1.0" } ] },
         "health18": { "on_entry": [ "/scoreboard players set @s health 18" ], "transitions": [ { "default": "1.0" } ] },
         "health19": { "on_entry": [ "/scoreboard players set @s health 19" ], "transitions": [ { "default": "1.0" } ] },
-        "health20": { "on_entry": [ "/scoreboard players set @s health 20" ], "transitions": [ { "default": "1.0" } ] }
-        //add more states as needed
+        "health20": { "on_entry": [ "/scoreboard players set @s health 20" ], "transitions": [ { "default": "1.0" } ] }//add more states as needed
       }
     }
   }
