@@ -1,0 +1,58 @@
+//scoreboard objectives add health dummy health
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.health": {
+      "initial_state": "default",
+      "states": {
+        "default": { "on_entry": [ "variable.health = query.health" ], "transitions": [ { "health_changed": "variable.health != query.health" } ] },
+        "health_changed": {
+          "transitions": [
+            { "health1": "query.health == 1" },
+            { "health2": "query.health == 2" },
+            { "health3": "query.health == 3" },
+            { "health4": "query.health == 4" },
+            { "health5": "query.health == 5" },
+            { "health6": "query.health == 6" },
+            { "health7": "query.health == 7" },
+            { "health8": "query.health == 8" },
+            { "health9": "query.health == 9" },
+            { "health10": "query.health == 10" },
+            { "health11": "query.health == 11" },
+            { "health12": "query.health == 12" },
+            { "health13": "query.health == 13" },
+            { "health14": "query.health == 14" },
+            { "health15": "query.health == 15" },
+            { "health16": "query.health == 16" },
+            { "health17": "query.health == 17" },
+            { "health18": "query.health == 18" },
+            { "health19": "query.health == 19" },
+            { "health20": "query.health == 20" }
+            //add more transitions as needed
+          ]
+        },
+        "health1": { "on_entry": [ "/scoreboard players set @s health 1" ], "transitions": [ { "default": "1.0" } ] },
+        "health2": { "on_entry": [ "/scoreboard players set @s health 2" ], "transitions": [ { "default": "1.0" } ] },
+        "health3": { "on_entry": [ "/scoreboard players set @s health 3" ], "transitions": [ { "default": "1.0" } ] },
+        "health4": { "on_entry": [ "/scoreboard players set @s health 4" ], "transitions": [ { "default": "1.0" } ] },
+        "health5": { "on_entry": [ "/scoreboard players set @s health 5" ], "transitions": [ { "default": "1.0" } ] },
+        "health6": { "on_entry": [ "/scoreboard players set @s health 6" ], "transitions": [ { "default": "1.0" } ] },
+        "health7": { "on_entry": [ "/scoreboard players set @s health 7" ], "transitions": [ { "default": "1.0" } ] },
+        "health8": { "on_entry": [ "/scoreboard players set @s health 8" ], "transitions": [ { "default": "1.0" } ] },
+        "health9": { "on_entry": [ "/scoreboard players set @s health 9" ], "transitions": [ { "default": "1.0" } ] },
+        "health10": { "on_entry": [ "/scoreboard players set @s health 10" ], "transitions": [ { "default": "1.0" } ] },
+        "health11": { "on_entry": [ "/scoreboard players set @s health 11" ], "transitions": [ { "default": "1.0" } ] },
+        "health12": { "on_entry": [ "/scoreboard players set @s health 12" ], "transitions": [ { "default": "1.0" } ] },
+        "health13": { "on_entry": [ "/scoreboard players set @s health 13" ], "transitions": [ { "default": "1.0" } ] },
+        "health14": { "on_entry": [ "/scoreboard players set @s health 14" ], "transitions": [ { "default": "1.0" } ] },
+        "health15": { "on_entry": [ "/scoreboard players set @s health 15" ], "transitions": [ { "default": "1.0" } ] },
+        "health16": { "on_entry": [ "/scoreboard players set @s health 16" ], "transitions": [ { "default": "1.0" } ] },
+        "health17": { "on_entry": [ "/scoreboard players set @s health 17" ], "transitions": [ { "default": "1.0" } ] },
+        "health18": { "on_entry": [ "/scoreboard players set @s health 18" ], "transitions": [ { "default": "1.0" } ] },
+        "health19": { "on_entry": [ "/scoreboard players set @s health 19" ], "transitions": [ { "default": "1.0" } ] },
+        "health20": { "on_entry": [ "/scoreboard players set @s health 20" ], "transitions": [ { "default": "1.0" } ] }
+        //add more states as needed
+      }
+    }
+  }
+}
