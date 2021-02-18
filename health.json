@@ -6,7 +6,7 @@
     "controller.animation.health": {
       "initial_state": "default",
       "states": {
-        "default": { "on_entry": [ "variable.health = query.health" ], "transitions": [ { "health_changed": "variable.health != query.health" } ] },
+        "default": { "on_entry": [ "variable.health = query.health;" ], "transitions": [ { "health_changed": "variable.health != query.health" } ] },
         "health_changed": {
           "transitions": [
             { "health1": "query.health == 1" },
