@@ -5,7 +5,9 @@ Basic behavioral and resource files for a better pvp experience on vanilla bedro
 Script help: xlynxx, imrglop, 7dev7urandom.
 
 xlynxx: https://github.com/XlynxX
+
 imrglop: https://github.com/Imrglop
+
 7dev7urandom: https://github.com/7dev7urandom
 
 Based on EZ scripts by HongyiMC
