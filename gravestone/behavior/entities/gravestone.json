@@ -1,0 +1,78 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "uhc:gravestone",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      //"runtime_identifier":"minecraft:shulker"
+      "scripts": {
+        "animate": [
+          { "tp_items": "!query.is_sheared" }
+        ]
+      },
+      "animations": {
+        "tp_items": "animation.tp_items"
+      }
+    },
+    "component_groups": {
+      "uhc:syphon": {
+        "minecraft:item_hopper": {},
+        "minecraft:tick_world": {},
+        "minecraft:timer": {
+          "time": 5,
+          "looping": false,
+          "time_down_event": {
+            "event": "uhc:remove_syphon"
+          }
+        }
+      },
+      "uhc:tp_items":{
+        "minecraft:is_sheared":{}
+      }
+    },
+    "components": {
+      "minecraft:nameable":{
+      	"always_show": true
+      },
+      "minecraft:equippable": {},
+      "minecraft:is_chested": {},
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:inventory": {
+        "container_type": "horse",
+        "inventory_size": 54,
+        "can_be_syphoned_from": true
+      },
+      "minecraft:collision_box":{
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:physics":{
+        "has_gravity": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [ "uhc:syphon" ]
+        }
+      },
+      "uhc:remove_syphon": {
+        "remove": {
+          "component_groups": [ "uhc:syphon" ]
+        }
+      },
+      "uhc:tp_items": {
+        "add": {
+          "component_groups": [ "uhc:tp_items" ]
+        }
+      }
+    }
+  }
+}

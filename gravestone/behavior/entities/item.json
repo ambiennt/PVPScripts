@@ -1,0 +1,52 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:item",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "uhc:fire_immune": {
+        "minecraft:fire_immune": {},
+        "minecraft:timer": {
+          "time": 5,
+          "looping": false,
+          "time_down_event": {
+            "event": "uhc:despawn"
+          }
+        }
+      },
+      "uhc:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "player" }
+              ]
+            },
+            "add": {
+              "component_groups": [ "uhc:fire_immune" ]
+            }
+          }
+        ]
+      },
+      "uhc:despawn": {
+        "sequence": [
+          {
+            "filters": { "test": "in_lava" },
+            "add": {
+              "component_groups": [ "uhc:despawn" ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "uhc:gravestone",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/gravestone"
+      },
+      "geometry": {
+        "default": "geometry.gravestone"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}
