@@ -1,6 +1,6 @@
 # pvp-scripts
 
-Basic behavioral and resource files for a better pvp experience on vanilla bedrock edition. You can use whatever you want in your worlds/servers, I don't care.
+Basic behavioral and resource files for a better pvp experience on vanilla bedrock edition. You can use whatever you want in your worlds/servers, Idc just dont take credit for the things from here you use
 
 Script help: xlynxx, imrglop, 7dev7urandom.
 
