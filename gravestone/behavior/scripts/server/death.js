@@ -16,7 +16,7 @@ system.initialize = function() {
             system.executeCommand(`summon uhc:gravestone ${Math.floor(x)} ${Math.floor(y)} ${Math.floor(z)} minecraft:entity_spawned "§a${deadEntity.data.name}'s gravestone§r"`, () => {});
 
             //if a player was killed by another player
-            if (event.data.killer && event.data.killer.__identifier__ === "mineraft:player") {
+            if (event.data.killer.__identifier__ === "minecraft:player") {
                 const killerHealth = system.getComponent(event.data.killer, "minecraft:health");
                 system.executeCommand(`tellraw @a {"rawtext":[{"text":"§c${deadEntity.data.name} was slain by ${killerEntity.data.name} §a(${killerHealth.data.value}HP) §cat position: ${Math.round(x)}, ${Math.round(y)}, ${Math.round(z)}"}]}`, () => {});
                 system.executeCommand(`execute ${killerEntity.data.name} ~ ~ ~ function killer`, () => {});
