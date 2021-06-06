@@ -2,50 +2,83 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "minecraft:item",
+      "identifier": "uhc:gravestone",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          { "tp_items": "!query.is_sheared" }
+        ]
+      },
+      "animations": {
+        "tp_items": "animation.tp_items"
+      }
     },
     "component_groups": {
-      "uhc:fire_immune": {
-        "minecraft:fire_immune": {},
+      "uhc:syphon": {
+        "minecraft:item_hopper": {},
+        "minecraft:tick_world": {},
         "minecraft:timer": {
-          "time": 5,
+          "time": 5.0,
           "looping": false,
           "time_down_event": {
-            "event": "uhc:despawn"
+            "event": "uhc:remove_syphon"
           }
         }
       },
-      "uhc:despawn": {
-        "minecraft:instant_despawn": {}
+      "uhc:tp_items":{
+        "minecraft:is_sheared":{}
       }
+    },
+    "components": {
+      "minecraft:nameable":{
+      	"always_show": true
+      },
+      "minecraft:equippable": {},
+      "minecraft:is_chested": {},
+      "minecraft:inventory": {
+        "container_type": "horse",
+        "inventory_size": 54,
+        "can_be_syphoned_from": true
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:collision_box":{
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:knockback_resistance":{
+        "value": 1.0
+      },
+      "minecraft:physics":{
+        "has_gravity": false
+      },
+      "minecraft:fire_immune":{}
     },
     "events": {
       "minecraft:entity_spawned": {
-        "sequence": [
-          {
-            "filters": {
-              "all_of": [
-                { "test": "is_family", "subject": "other", "value": "player" }
-              ]
-            },
-            "add": {
-              "component_groups": [ "uhc:fire_immune" ]
-            }
-          }
-        ]
+        "add": {
+          "component_groups": [ "uhc:syphon" ]
+        }
       },
-      "uhc:despawn": {
-        "sequence": [
-          {
-            "filters": { "test": "in_lava" },
-            "add": {
-              "component_groups": [ "uhc:despawn" ]
-            }
-          }
-        ]
+      "uhc:remove_syphon": {
+        "remove": {
+          "component_groups": [ "uhc:syphon" ]
+        }
+      },
+      "uhc:tp_items": {
+        "add": {
+          "component_groups": [ "uhc:tp_items" ]
+        }
       }
     }
   }
