@@ -4,11 +4,11 @@
     "animation.tp_items": {
       "timeline": {
         "0.0": [
-          "/tp @e[type=item,r=8] @s",
+          "/tp @e[type=item,r=7.5] @s",
           "@s uhc:tp_items"
         ]
       },
-      "animation_length": 0.05,
+      "animation_length": 0.1,
       "loop": false
     }
   }
