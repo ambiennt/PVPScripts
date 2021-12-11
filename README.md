@@ -1,14 +1,3 @@
 # pvp-scripts
 
-Basic behavioral and resource files for a better pvp experience on vanilla bedrock edition. You can use whatever you want in your worlds/servers, Idc just dont take credit for the things from here you use
-
-Script help: xlynxx, imrglop, 7dev7urandom.
-
-xlynxx: https://github.com/XlynxX
-
-imrglop: https://github.com/Imrglop
-
-7dev7urandom: https://github.com/7dev7urandom
-
-Based on EZ scripts by HongyiMC
-https://github.com/HongyiMC/EZ-Scripts
+Basic behavioral and resource files for a better pvp experience on vanilla bedrock edition. The contents of this repository use the Legacy Scripting API and the addon system and may now be deprecated in favor of the Gametest API.
